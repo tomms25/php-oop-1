@@ -16,7 +16,7 @@
      public $year;
 
 
-     public function _construct ($title, $genre){
+     public function __construct ($title, $genre, $length, $year){
 
          $this->title = $title;
          $this->genre = $genre;
@@ -24,6 +24,14 @@
          $this->year = $year;
 
      }
+     public function getHtml()
+    {
+        return
+        $this->title
+        . ' - ' . $this->genre
+        . ' - ' . $this->length
+        . ' - ' . $this->year;
+    }
 
 
 
@@ -32,8 +40,13 @@
  $movie1 = new Movie("Grand Budapest Hotel", "Commedia/Drammatico","100 min", "2014");
  $movie2 = new Movie("Il castello errante di Howl", "Animazione", "120 min", "2004");
 
- var_dump($movie1);
- echo "<br><br>";
- var_dump($movie2);
+//  var_dump($movie1);
+//  echo "<br><br>";
+//  var_dump($movie2);
+
+echo $movie1->getHtml();
+echo '<br><br>';
+echo $movie2->getHtml();
+echo '<br><br>';
 
 
